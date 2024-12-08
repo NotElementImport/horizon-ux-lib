@@ -1,0 +1,105 @@
+:root {
+    --h-font-size: 16px;
+
+    --h-blank: whitesmoke;
+    --h-blank-negative: #111111;
+
+    --h-size-s: 0.8em;
+    --h-size-m: 1em;
+    --h-size-l: 1.8em;
+    --h-size-xl: 2.5em;
+}
+
+body.dark {
+    --h-blank: #141414;
+    --h-blank-negative: whitesmoke;
+
+    --h-compile-accent: color-mix(in srgb, var(--h-accent), gray 50%);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    --h-accent: #395a97;
+
+    --h-compile-accent: color-mix(in srgb, var(--h-accent), #666666 40%);
+    --h-compile-accent-transparent: color-mix(in srgb, var(--h-compile-accent), transparent 50%);
+
+    --h-bg: color-mix(in srgb, var(--h-compile-accent), var(--h-blank) 96%);
+    --h-container: color-mix(in srgb, var(--h-compile-accent), var(--h-blank) 91%);
+    --h-shadow: color-mix(in srgb, var(--h-bg), black 10%);
+
+    --h-light-accent: color-mix(in srgb, var(--h-compile-accent), var(--h-bg) 82%);
+    --h-pressed-accent: color-mix(in srgb, var(--h-compile-accent), transparent 70%);
+    --h-accent-text: color-mix(in srgb, var(--h-compile-accent), var(--h-blank) 90%);
+    --h-text: color-mix(in srgb, var(--h-compile-accent), var(--h-blank-negative) 90%);
+    --h-text-semi: color-mix(in srgb, var(--h-text), var(--h-blank) 30%);
+    --h-semi-light-accent: color-mix(in srgb, var(--h-compile-accent), var(--h-text-semi) 60%);
+
+    background: var(--h-bg);
+    color: var(--h-text-semi);
+
+    accent-color: var(--h-compile-accent);
+}
+
+h1 {
+    padding: 0;
+    color: var(--h-compile-accent);
+}
+h2 {
+    padding: 0;
+    color: var(--h-semi-light-accent);
+}
+h1 span {
+    font-size: calc(var(--h-font-size) * 1.5);
+}
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: var(--h-font-size);
+    border: unset;
+}
+
+*:not(.h-group).h-pad-s {
+    padding: var(--h-size-s);
+}
+
+*:not(.h-group).h-pad-m {
+    padding: var(--h-size-m);
+}
+
+*:not(.h-group).h-pad-l {
+    padding: var(--h-size-l);
+}
+
+*:not(.h-group).h-pad-xl {
+    padding: var(--h-size-xl);
+}
+
+*.h-group.h-pad-s * {
+    padding: var(--h-size-s);
+}
+
+*.h-group.h-pad-m * {
+    padding: var(--h-size-m);
+}
+
+*.h-group.h-pad-l * {
+    padding: var(--h-size-l);
+}
+
+*.h-group.h-pad-xl * {
+    padding: var(--h-size-xl);
+}
+
+.h-hide {
+    display: none !important;
+    visibility: hidden !important;
+    user-select: none !important;
+}
+
+@media (min-width: 769px) {
+    .h-on-mobile {
+        display: none;
+    }
+}

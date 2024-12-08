@@ -1,0 +1,49 @@
+@keyframes ha-loading-spin {
+    0% { rotate: 0deg; }
+    100% { rotate: 360deg; }
+}
+
+.h-loading[loading=true] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.h-loading[loading=false] {
+    display: contents;
+}
+.h-loading__bar {
+    animation: ha-loading-spin 1s forwards infinite linear;
+    border-radius: 160px;
+    border: 0.4em solid var(--h-compile-accent);
+    margin: 1em;
+    box-sizing: border-box;
+}
+.h-loading.light .h-loading__bar {
+    border:  0.4em solid var(--h-light-accent);
+}
+.h-loading.text-color .h-loading__bar {
+    border:  0.4em solid var(--h-text);
+}
+.h-loading.spin-s .h-loading__bar {
+    min-width: 2em;
+    min-height: 2em;
+}
+
+.h-loading.spin-m .h-loading__bar {
+    min-width: 3em;
+    min-height: 3em;
+}
+
+.h-loading.spin-l .h-loading__bar {
+    min-width: 4.6em;
+    min-height: 4.6em;
+}
+
+.h-loading.spin-xl .h-loading__bar {
+    min-width: 6.5em;
+    min-height: 6.5em;
+}
+
+.h-loading__bar {
+    border-bottom-color: transparent !important;
+}

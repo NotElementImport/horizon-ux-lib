@@ -1,0 +1,1 @@
+export type AttributeSize = 's'|'m'|'l'|'xl'

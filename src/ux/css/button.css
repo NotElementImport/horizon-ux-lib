@@ -1,0 +1,62 @@
+.h-button {
+    padding: 10px;
+    background: var(--h-compile-accent);
+    color: var(--h-accent-text);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.1s ease-in;
+    transition-property: background color opacity;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.h-button.light {
+    background: var(--h-light-accent);
+    color: var(--h-compile-accent) !important;
+}
+
+.h-button.ghost {
+    background: transparent !important;
+    color: var(--h-compile-accent);
+}
+
+.h-button.circle {
+    border-radius: 50em;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+}
+
+@media (hover: hover) {
+    .h-button:hover {
+        opacity: 0.86;
+    }
+}
+
+.h-button:active {
+    background: var(--h-pressed-accent) !important;
+    color: var(--h-compile-accent) !important;
+}
+
+.h-group-button {
+    overflow: hidden;
+    border-radius: 8px;
+    display: inline-flex;
+}
+
+.h-group-button.block {
+    display: flex;
+}
+
+.h-group-button .h-button {
+    flex: 1 1;
+    border-radius: 0;
+}
+
+.h-group-button.circle {
+    border-radius: 50em;
+}
+
+.h-group-button.circle .h-button {
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+}
