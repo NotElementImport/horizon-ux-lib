@@ -1,353 +1,359 @@
 .h-input {
-    box-sizing: border-box;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5em;
-    color: var(--h-compile-accent);
-    outline: none;
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  color: var(--h-compile-accent);
+  outline: none;
 }
 .h-input__title:empty {
-    display: none;
+  display: none;
 }
-.h-input__title { user-select: none; }
+.h-input__title {
+  user-select: none;
+}
 .h-input__title.required {
-    margin-left: 0.8em;
-    position: relative;
+  margin-left: 0.8em;
+  position: relative;
 }
 .h-input__title.required::before {
-    content: "*";
-    position: absolute;
-    left: -0.69em;
-    top: 50%;
-    translate: 0 -35%;
+  content: "*";
+  position: absolute;
+  left: -0.69em;
+  top: 50%;
+  translate: 0 -35%;
 }
 .h-input-select,
 .h-input input {
-    -webkit-tap-highlight-color: transparent;
-    cursor: pointer;
-    background: var(--h-bg);
-    outline: none;
-    color: var(--h-text-semi);
-    border-radius: 8px;
-    padding: 0.8em;
-    border: 1px solid var(--h-compile-accent);
-    box-sizing: border-box;
-    width: 100%;
-    outline: 0px transparent solid;
-    transition: outline 0.1s ease-in;
+  -webkit-tap-highlight-color: transparent;
+  cursor: pointer;
+  background: var(--h-bg);
+  outline: none;
+  color: var(--h-text-semi);
+  border-radius: 8px;
+  padding: 0.8em;
+  border: 1px solid var(--h-compile-accent);
+  box-sizing: border-box;
+  width: 100%;
+  outline: 0px transparent solid;
+  transition: outline 0.1s ease-in;
 }
 
 .h-input-select:focus,
 .h-input input:not(.un-h):focus {
-    outline: var(--h-compile-accent-transparent) 3px solid;
+  outline: var(--h-compile-accent-transparent) 3px solid;
 }
 
 .h-input-slider input {
-    display: none;
+  display: none;
 }
 .h-input__slider {
-    cursor: pointer;
-    align-self: start;
-    display: block;
-    position: relative;
-    box-sizing: border-box;
-    aspect-ratio: 1.9/1;
-    border-radius: 50em;
-    padding: 2px;
-    border: 1px solid var(--h-compile-accent);
+  cursor: pointer;
+  align-self: start;
+  display: block;
+  position: relative;
+  box-sizing: border-box;
+  aspect-ratio: 1.9/1;
+  border-radius: 50em;
+  padding: 2px;
+  border: 1px solid var(--h-compile-accent);
 }
 .h-input-slider.m .h-input__slider {
-    height: calc(var(--h-size-m) * 1.5);
+  height: calc(var(--h-size-m) * 1.5);
 }
 .h-input-slider.s .h-input__slider {
-    height: calc(var(--h-size-s) * 1.5);
+  height: calc(var(--h-size-s) * 1.5);
 }
 .h-input-slider.l .h-input__slider {
-    height: calc(var(--h-size-l));
+  height: calc(var(--h-size-l));
 }
 .h-input-slider.xl .h-input__slider {
-    height: calc(var(--h-size-xl));
+  height: calc(var(--h-size-xl));
 }
 .h-input__slider::after {
-    content: '';
-    z-index: 1;
-    left: 2px;
-    display: block;
-    position: absolute;
-    height: calc(100% - 4px);
-    aspect-ratio: 1/1;
-    box-sizing: border-box;
-    border-radius: 50em;
-    border: 1px solid var(--h-compile-accent);
-    background: var(--h-compile-accent);
-    transition: 0.15s ease-in;
-    transition-property: left background;
+  content: "";
+  z-index: 1;
+  left: 2px;
+  display: block;
+  position: absolute;
+  height: calc(100% - 4px);
+  aspect-ratio: 1/1;
+  box-sizing: border-box;
+  border-radius: 50em;
+  border: 1px solid var(--h-compile-accent);
+  background: var(--h-compile-accent);
+  transition: 0.15s ease-in;
+  transition-property: left background;
 }
 input:checked + .h-input__slider::after {
-    left: calc(50% + 2px);
-    background: var(--h-bg);
+  left: calc(50% + 2px);
+  background: var(--h-bg);
 }
 .h-input__slider::before {
-    position: absolute;
-    content: '';
-    display: block;
-    border-radius: 50em;
-    height: calc(100% - 4px);
-    aspect-ratio: 1/1;
-    box-sizing: border-box;
-    background: var(--h-compile-accent);
-    transition: 0.15s ease-in;
-    transition-property: aspect-ratio;
-    z-index: 0;
+  position: absolute;
+  content: "";
+  display: block;
+  border-radius: 50em;
+  height: calc(100% - 4px);
+  aspect-ratio: 1/1;
+  box-sizing: border-box;
+  background: var(--h-compile-accent);
+  transition: 0.15s ease-in;
+  transition-property: aspect-ratio;
+  z-index: 0;
 }
 input:checked + .h-input__slider::before {
-    aspect-ratio: 2.15/1;
+  aspect-ratio: 2.15/1;
 }
 .h-input.along {
-    align-items: center;
-    flex-direction: row;
+  align-items: center;
+  flex-direction: row;
 }
 .h-input.along *:last-child {
-    margin-left: auto;
+  margin-left: auto;
 }
 
 .h-input-ip {
-    display: flex;
-    flex-direction: row;
-    align-items: end;
-    gap: 1em;
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+  gap: 1em;
 }
 
 .h-input-ip__circle {
-    width: 4px;
-    height: 4px;
-    border-radius: 10px;
-    background: var(--h-compile-accent);
-    margin-bottom: 0.3em;
+  width: 4px;
+  height: 4px;
+  border-radius: 10px;
+  background: var(--h-compile-accent);
+  margin-bottom: 0.3em;
 }
 
 .h-input-ip input {
-    flex: 1 1;
-    text-align: center;
+  flex: 1 1;
+  text-align: center;
 }
 
 .h-input.light .h-input-select,
 .h-input.light input {
-    background: var(--h-light-accent);
-    border-radius: 8px;
-    border: 0;
-    color: var(--h-compile-accent);
+  background: var(--h-light-accent);
+  border-radius: 8px;
+  border: 0;
+  color: var(--h-compile-accent);
 }
 .h-input.light .h-input__slider {
-    background: var(--h-light-accent);
-    border-color: var(--h-light-accent);
+  background: var(--h-light-accent);
+  border-color: var(--h-light-accent);
 }
 .h-input.light input:checked + .h-input__slider::after {
-    background: var(--h-light-accent);
+  background: var(--h-light-accent);
 }
 
 .h-input-address {
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
 }
 .h-input-address_item {
-    display: flex;
-    position: relative;
-    flex-direction: column;
-    background: var(--h-container);
-    padding: 1em;
-    padding-left: 5em;
-    gap: 0.5em;
-    border-radius: 8px;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  background: var(--h-container);
+  padding: 1em;
+  padding-left: 5em;
+  gap: 0.5em;
+  border-radius: 8px;
 }
 .h-input-address_item::before {
-    position: absolute;
-    content: "";
-    left: 1.25em;
-    top: 50%;
-    translate: 0 -50%;
-    width: 2em;
-    height: 2em;
-    border-radius: 100px;
-    border: 2px solid var(--h-compile-accent);
+  position: absolute;
+  content: "";
+  left: 1.25em;
+  top: 50%;
+  translate: 0 -50%;
+  width: 2em;
+  height: 2em;
+  border-radius: 100px;
+  border: 2px solid var(--h-compile-accent);
 }
 .h-input-address_item:not(:last-child)::after {
-    position: absolute;
-    content: "";
-    left: calc(1.25em + 1.05em) ;
-    top: 50%;
-    translate: 0 1.1em;
-    width: 2px;
-    height: 5.22em;
-    z-index: 1;
-    background: var(--h-compile-accent);
+  position: absolute;
+  content: "";
+  left: calc(1.25em + 1.05em);
+  top: 50%;
+  translate: 0 1.1em;
+  width: 2px;
+  height: 5.22em;
+  z-index: 1;
+  background: var(--h-compile-accent);
 }
-.h-input-select { position: relative; }
+.h-input-select {
+  position: relative;
+}
 .h-input-select__panel {
-    box-sizing: border-box;
-    position: absolute;
-    opacity: 0;
-    pointer-events: none;
-    width: 100%;
-    max-height: 16em;
-    overflow-y: auto;
-    background: var(--h-container);
-    padding: 0.1em;
-    top: calc(100% + 0.5em);
-    border-radius: 8px;
-    left: 50%;
-    translate: -50%;
-    z-index: 10;
-    transition: 0.15s ease-in;
-    transition-property: opacity;
+  box-sizing: border-box;
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  width: 100%;
+  max-height: 16em;
+  overflow-y: auto;
+  background: var(--h-container);
+  padding: 0.1em;
+  top: calc(100% + 0.5em);
+  border-radius: 8px;
+  left: 50%;
+  translate: -50%;
+  z-index: 10;
+  transition: 0.15s ease-in;
+  transition-property: opacity;
 }
 .h-input-select__panel::-webkit-scrollbar {
-    width: 4px;
+  width: 4px;
 }
 .h-input-select__panel::-webkit-scrollbar-thumb {
-    background: var(--h-compile-accent);
-    border-radius: 4px;
+  background: var(--h-compile-accent);
+  border-radius: 4px;
 }
 .h-input-select:focus-within .h-input-select__panel {
-    opacity: 1;
-    pointer-events: unset;
+  opacity: 1;
+  pointer-events: unset;
 }
 .h-input-select__item {
-    padding: 0.9em;
-    user-select: none;
-    border-radius: 6px;
+  padding: 0.9em;
+  user-select: none;
+  border-radius: 6px;
 }
 .h-input-select__item:hover {
-    background: var(--h-light-accent);
+  background: var(--h-light-accent);
 }
 .h-input-select__panel.multiple .h-input-select__item {
-    padding-left: 2.5em;
-    position: relative;
+  padding-left: 2.5em;
+  position: relative;
 }
 .h-input-select__panel.multiple .h-input-select__item.selected::after {
-    content: "";
-    position: absolute;
-    left: 1em;
-    top: 46%;
-    width: 5px;
-    height: 9px;
-    transform: translateY(-50%) rotate(45deg);
-    border-right: 2px solid var(--h-compile-accent);
-    border-bottom: 2px solid var(--h-compile-accent);
+  content: "";
+  position: absolute;
+  left: 1em;
+  top: 46%;
+  width: 5px;
+  height: 9px;
+  transform: translateY(-50%) rotate(45deg);
+  border-right: 2px solid var(--h-compile-accent);
+  border-bottom: 2px solid var(--h-compile-accent);
 }
 .h-input-select__search {
-    display: none;
-    padding: 0 !important;
-    border: 0 !important;
-    border-radius: 0 !important;
+  display: none;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
 }
 .h-input-select.with-search:focus-within > .h-input-select__search {
-    display: block;
+  display: block;
 }
 .h-input-select.with-search:focus-within > span {
-    display: none;
+  display: none;
 }
-.h-input-select__clear {
-    background: transparent;
-    cursor: pointer;
-    aspect-ratio: 1/1;
-    height: 20px;
-    position: absolute;
-    right: 0.8em;
-    top: 50%;
-    transform: translateY(-50%);
-    border-radius: 16px;
+.h-input-select__clear,
+.h-input__clear {
+  background: transparent;
+  cursor: pointer;
+  aspect-ratio: 1/1;
+  height: 20px;
+  position: absolute;
+  right: 0.8em;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 16px;
 }
-.h-input-select__clear::before {
-    content: "";
-    background: var(--h-compile-accent);
-    width: 12px;
-    height: 3px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(45deg);
+.h-input-select__clear::before,
+.h-input__clear::before {
+  content: "";
+  background: var(--h-compile-accent);
+  width: 12px;
+  height: 3px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
 }
-.h-input-select__clear::after {
-    content: "";
-    background: var(--h-compile-accent);
-    width: 12px;
-    height: 3px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(-45deg);
+.h-input-select__clear::after,
+.h-input__clear:after {
+  content: "";
+  background: var(--h-compile-accent);
+  width: 12px;
+  height: 3px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
 }
-
 
 .h-input-checkbox {
-    display: flex;
+  display: flex;
 }
 
 .h-input-checkbox input {
-    display: none;
+  display: none;
 }
 .h-input__checkbox {
-    cursor: pointer;
-    align-self: start;
-    display: block;
-    position: relative;
-    box-sizing: border-box;
-    aspect-ratio: 1/1;
-    border-radius: 6px;
-    padding: 2px;
-    border: 1px solid var(--h-compile-accent);
-    height: 24px;
+  cursor: pointer;
+  align-self: start;
+  display: block;
+  position: relative;
+  box-sizing: border-box;
+  aspect-ratio: 1/1;
+  border-radius: 6px;
+  padding: 2px;
+  border: 1px solid var(--h-compile-accent);
+  height: 24px;
 }
 .h-input-checkbox.along .h-input__checkbox {
-    align-self: center;
+  align-self: center;
 }
 .h-input-checkbox.light .h-input__checkbox {
-    background: var(--h-light-accent);
-    border-color: var(--h-light-accent);
+  background: var(--h-light-accent);
+  border-color: var(--h-light-accent);
 }
 .h-input__checkbox::before {
-    content: '';
-    left: 2px;
-    display: block;
-    position: absolute;
-    height: calc(100% - 4px);
-    aspect-ratio: 1/1;
-    box-sizing: border-box;
-    border-radius: 4px;
-    background: transparent;
-    transition: 0.15s ease-in;
-    transition-property: background;
+  content: "";
+  left: 2px;
+  display: block;
+  position: absolute;
+  height: calc(100% - 4px);
+  aspect-ratio: 1/1;
+  box-sizing: border-box;
+  border-radius: 4px;
+  background: transparent;
+  transition: 0.15s ease-in;
+  transition-property: background;
 }
 input:checked + .h-input__checkbox::before {
-    background: var(--h-compile-accent);
+  background: var(--h-compile-accent);
 }
 .h-input__checkbox::after {
-    content: '';
-    position: absolute;
-    top: 45%;
-    left: 50%;
-    translate: -50% -50%;
-    rotate: 45deg;
-    width: 4px;
-    height: 10px;
-    border-bottom: 0px solid transparent;
-    border-right: 0px solid transparent;
-    transition: 0.15s ease-in;
-    transition-property: border;
+  content: "";
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  translate: -50% -50%;
+  rotate: 45deg;
+  width: 4px;
+  height: 10px;
+  border-bottom: 0px solid transparent;
+  border-right: 0px solid transparent;
+  transition: 0.15s ease-in;
+  transition-property: border;
 }
 input:checked + .h-input__checkbox::after {
-    border-bottom: 3px solid var(--h-bg);
-    border-right: 3px solid var(--h-bg);
+  border-bottom: 3px solid var(--h-bg);
+  border-right: 3px solid var(--h-bg);
 }
 .h-input-checkbox.light input:checked + .h-input__checkbox::after {
-    border-bottom: 3px solid var(--h-light-accent);
-    border-right: 3px solid var(--h-light-accent);
+  border-bottom: 3px solid var(--h-light-accent);
+  border-right: 3px solid var(--h-light-accent);
 }
 
 .h-input.disabled {
-    --h-compile-accent: color-mix(in srgb, gray, transparent 50%);
-    --h-text: gray;
+  --h-compile-accent: color-mix(in srgb, gray, transparent 50%);
+  --h-text: gray;
 }
