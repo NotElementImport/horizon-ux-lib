@@ -1,25 +1,28 @@
 import { comp } from 'horizon-core/component'
-import horizonRouter from 'horizon-core/router'
 import './ux/hux.css'
-import layout from './ux/layout'
 import { useColorSheme } from 'horizon-core/composables'
+import sandwichLayout from './ux/sandwich.layout'
+import { useSignal } from 'horizon-core/state'
+import container from './ux/container'
 
-const wrapperStyle = {
-    margin: 'auto',
-    width: 'min(1000px, 100%)',
-    boxSizing: 'border-box'
-}
+export const hideBar = useSignal(false)
 
-export default comp((_, { $, use }) => {
-    const header = () => {
-        $('div', { style: { ...wrapperStyle, paddingInline: '0.5em' } }, () => {
-            $('h1', { html: 'Test App' })
+export default comp((_, { text }) => {
+    const beforeBar = () => {
+        container({ styleTags: ['background'], style: 'padding: 1em' }, () => {
+            text('User info: ')
         })
     }
 
-    layout({ header, theme: useColorSheme() }, () => {
-        $('div', { style: { ...wrapperStyle, height: '100%' } }, () => {
-            use(horizonRouter)
-        })
+    sandwichLayout({
+        items: [
+            { title: 'Home', click: () => console.log('Clicked!') },
+            { title: 'Page' },
+            { title: 'Utils' }
+        ],
+        beforeBar,
+        hideBar,
+        theme: useColorSheme(),
+        useRouter: true,
     })
 })

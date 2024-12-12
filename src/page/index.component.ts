@@ -23,7 +23,7 @@ export default comp((_, { text }) => {
             textInput({
                 model: password,
                 title: "Password",
-                password: useComputed(un => !un(showPassword)),
+                password: useComputed(() => !showPassword.value),
                 styleTags: ['light']
             })
 
@@ -101,7 +101,7 @@ export default comp((_, { text }) => {
     }
 
     const { nextScreen, prevScreen, setScreen } = screens({
-        animation: 'v-slide',
+        animation: 'fade',
         key: 'main',
         timing: 500,
         screens: [
