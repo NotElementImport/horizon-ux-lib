@@ -1,0 +1,37 @@
+.h-horizontal-line {
+  display: flex;
+  align-items: center;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
+.h-horizontal-line__line {
+  flex: 1 1;
+  border-top: 1px solid var(--h-compile-accent);
+}
+
+.h-horizontal-line:has(:nth-child(3)),
+.h-vertical-line:has(:nth-child(3)) {
+  gap: 0.8em;
+}
+
+.h-horizontal-line span,
+.h-vertical-line span {
+  color: var(--h-compile-accent);
+  user-select: none;
+}
+.h-vertical-line {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  padding-left: 0.7em;
+  padding-right: 0.7em;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+.h-vertical-line__line {
+  flex: 1 1;
+  border-left: 1px solid var(--h-compile-accent);
+}

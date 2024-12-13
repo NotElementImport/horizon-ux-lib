@@ -1,28 +1,17 @@
 import { comp } from 'horizon-core/component'
+import { getSnapshotApp } from 'horizon-core/testing'
 import './ux/hux.css'
-import { useColorSheme } from 'horizon-core/composables'
-import sandwichLayout from './ux/sandwich.layout'
 import { useSignal } from 'horizon-core/state'
-import container from './ux/container'
+import router from 'horizon-core/router'
+import horizontalLine from './ux/horizontal.line'
+import verticalLine from './ux/vertical.line'
 
-export const hideBar = useSignal(false)
+const testSignal = useSignal("Hello world!", { key: 'Test value' })
 
-export default comp((_, { text }) => {
-    const beforeBar = () => {
-        container({ styleTags: ['background'], style: 'padding: 1em' }, () => {
-            text('User info: ')
-        })
-    }
+export default comp((_, { $, text }) => {
+  $('div', {}, () => {
+    text(testSignal)
 
-    sandwichLayout({
-        items: [
-            { title: 'Home', click: () => console.log('Clicked!') },
-            { title: 'Page' },
-            { title: 'Utils' }
-        ],
-        beforeBar,
-        hideBar,
-        theme: useColorSheme(),
-        useRouter: true,
-    })
+    console.log(getSnapshotApp())
+  })
 })
